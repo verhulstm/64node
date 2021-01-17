@@ -1,14 +1,19 @@
 aws:
   driver: 'ec2'
-  id: '######'
-  key: '######'
-  image: 'ami-008b09448b998a562'
-  location: 'us-west-2'
-  availability_zone: 'us-west-2b'
-  securitygroup: 'salted_server'
+  id: ''
+  key: ''
+  image: 'ami-0dd9f0e7df0f0a138'
+  location: 'us-east-2'
+  availability_zone: 'us-east-2a'
+  securitygroupid:
+    - 'sg-069636087930438de'
+  subnetid: 'subnet-0359e0ad75f67fe2c'
   ssh_username: 'ubuntu'
-  private_key: '/home/saltmaster/salt_controlplane/keys/salt_cluster.pem'
-  keyname: 'salt_cluster'
+  ssh_interface: private_ips
+  private_key: '/home/ubuntu/key.pem'
+  keyname: 'key'
   deploy: True
+  PrivateIpAddresses:
+   - Primary: True
   minion:
-    master: '172.31.43.11'
+    master: ''
